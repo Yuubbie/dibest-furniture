@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact: DiBest Furniture</title>
+<meta name="description" content="Book a consultation with DiBest Furniture in Lifecamp, Abuja. WhatsApp, call, or email us to start your project.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-row">
+    <a href="index.html" class="brand">
+      <img src="images/logo/logo.png" alt="DiBest Furniture">
+    </a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="about.html">Our Story</a>
+      <a href="wardrobes.html">Wardrobes</a>
+      <a href="tv-media.html">TV &amp; Media Walls</a>
+      <a href="mirrors.html">Mirrors</a>
+      <a href="dressing-tables.html">Vanities</a>
+      <a href="staircase.html">Staircase</a>
+      <a href="bar-display.html">Bar &amp; Display</a>
+      <a href="office.html">Office</a>
+      <a href="our-work.html">Our Work</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="hero" style="background-image: url('images/contact/storefront.jpeg'); min-height: 62vh;">
+  <div class="wrap hero-content">
+    <div class="hero-kicker">Contact</div>
+    <h1>Let us build the room you have been putting off.</h1>
+  </div>
+</section>
+
+<section>
+  <div class="wrap feature">
+    <div>
+      <h2>Book a consultation</h2>
+      <p>Tell us a little about the space and what you have in mind, and we will get back to you on WhatsApp to talk through it.</p>
+      <form id="contact-form">
+        <label for="c-name">Your name</label>
+        <input type="text" id="c-name" required>
+        <label for="c-phone">Phone or WhatsApp</label>
+        <input type="text" id="c-phone" required>
+        <label for="c-room">What are you looking to build</label>
+        <input type="text" id="c-room" placeholder="Wardrobe, media wall, office desk, and so on">
+        <label for="c-message">Message</label>
+        <textarea id="c-message" placeholder="Tell us about the room, sizes, and finish you have in mind."></textarea>
+        <button type="submit" class="btn btn-solid" style="margin-top:20px; width:100%; text-align:center; border:none; cursor:pointer;">Send on WhatsApp</button>
+      </form>
+    </div>
+    <div class="feature-media">
+      <img src="images/contact/door-handle.jpeg" alt="Brushed gold door handle detail" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section style="background: var(--panel);">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Reach us directly</h2>
+      <p>Prefer to call, message, or stop by in person.</p>
+    </div>
+    <div class="footer-grid" style="margin-bottom: 0;">
+      <div>
+        <h3>WhatsApp &amp; Phone</h3>
+        <a href="https://wa.me/2348108844843" target="_blank" rel="noopener">+234 810 884 4843</a>
+      </div>
+      <div>
+        <h3>Email</h3>
+        <a href="mailto:patrickchina42@gmail.com">patrickchina42@gmail.com</a>
+      </div>
+      <div>
+        <h3>Visit &amp; Follow</h3>
+        <p style="margin-bottom: 4px;">Lifecamp, Abuja</p>
+        <a href="https://www.facebook.com/share/18JnKsmG7H/" target="_blank" rel="noopener">Debest Furniture on Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h3>DiBest Furniture</h3>
+        <p>Bespoke furniture design and build, from first sketch to final install.</p>
+      </div>
+      <div>
+        <h3>Collections</h3>
+        <a href="wardrobes.html">Wardrobes</a>
+        <a href="tv-media.html">TV &amp; Media Walls</a>
+        <a href="mirrors.html">Mirrors</a>
+        <a href="dressing-tables.html">Vanities</a>
+      </div>
+      <div>
+        <h3>Studio</h3>
+        <a href="about.html">Our Story</a>
+        <a href="our-work.html">Our Work</a>
+        <a href="office.html">Office Furniture</a>
+        <a href="contact.html">Book a Consultation</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 DiBest Furniture. All rights reserved.</span>
+      <span>Better Spaces. A Lifestyle You Deserve.</span>
+      <a href="https://wa.me/2347032352158" target="_blank" rel="noopener" class="dev-credit">Developed by Yubbie Pen &amp; Pixel</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+  var cf = document.getElementById('contact-form');
+  if (cf) {
+    cf.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var name = document.getElementById('c-name').value;
+      var phone = document.getElementById('c-phone').value;
+      var room = document.getElementById('c-room').value;
+      var message = document.getElementById('c-message').value;
+      var text = 'Hello DiBest Furniture, I would like to book a consultation.' +
+        '\n\nName: ' + name +
+        '\nPhone: ' + phone +
+        (room ? '\nLooking to build: ' + room : '') +
+        (message ? '\nMessage: ' + message : '');
+      window.open('https://wa.me/2348108844843?text=' + encodeURIComponent(text), '_blank');
+      cf.innerHTML = '<p style="color:#f3eee3;margin:0;">Opening WhatsApp now. If it did not open, message us directly at +234 810 884 4843.</p>';
+    });
+  }
+</script>
+</body>
+</html>
