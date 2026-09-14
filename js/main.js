@@ -1,4 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Collections dropdown
+  document.querySelectorAll('.nav-item.dropdown').forEach(function (item) {
+    var toggle = item.querySelector('.dropdown-toggle');
+    if (!toggle) return;
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = item.classList.contains('open');
+      document.querySelectorAll('.nav-item.dropdown.open').forEach(function (o) {
+        if (o !== item) o.classList.remove('open');
+      });
+      item.classList.toggle('open', !isOpen);
+    });
+  });
+  document.addEventListener('click', function () {
+    document.querySelectorAll('.nav-item.dropdown.open').forEach(function (o) {
+      o.classList.remove('open');
+    });
+  });
+
   // Mobile nav toggle
   var toggle = document.querySelector('.nav-toggle');
   var links = document.querySelector('.nav-links');
